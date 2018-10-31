@@ -1,11 +1,33 @@
 <!DOCTYPE html>
+{% load static i18n %}
 <html>
 <head>
     <meta charset="utf-8">
     <title>QuarkBlob</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'base/vendor/normalize/normalize.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/style.css' %}">
+
 </head>
 <body>
-{% block content %}
-{% endblock content %}
+    <div class="header">
+        <a class="header-brand" href="{% url 'home' %}">
+            <i class="header-brand-logo fas fa-futbol"></i>
+            <span class="header-brand-name">QuarkBlob</span>
+        </a>
+        <div class="header-slogan">
+            Thoughts On <strong>Artificial Intelligence</strong>
+        </div>
+    </div>
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <div class="footer"></div>
+    <div class="footer-bottom">
+        @ {% now "Y" %} QuarkBlob. All rights reserved.
+    </div>
+
 </body>
 </html>
