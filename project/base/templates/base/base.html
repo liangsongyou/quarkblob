@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'base/css/style.css' %}">
+    <script type="text/javascript" src="{% static 'base/js/dropdown.js' %}"></script>
 
 </head>
 <body>
@@ -16,6 +17,25 @@
             <i class="header-brand-logo fas fa-futbol"></i>
             <span class="header-brand-name">QuarkBlob</span>
         </a>
+        <ul class="menu">
+            <li class="menu-li">
+                <a class="menu-li-a {% url 'home' as home_url %} {% if request.get_full_path == home_url %}
+                    menu-li-a--active                    
+                {% endif %}" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="menu-li">
+                <a class="menu-li-a" href="">About</a>
+            </li>
+        </ul>
+        <img onclick="myToggle()" class="mobile-menu toggle show-mobile" alt="menu" src="{% static 'base/images/hamburger.png' %}">
+        <ul id="dropdown" class="dropdown">
+            <li class="dropdown-li dropdown-li--active">
+                <a class="dropdown-li-a" href="/">Home</a>
+            </li>
+            <li class="dropdown-li">
+                <a class="dropdown-li-a" href="/about/">About</a>
+            </li>
+        </ul>
         <div class="header-slogan">
             Thoughts On <strong>Artificial Intelligence</strong>
         </div>
