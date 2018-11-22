@@ -9,16 +9,34 @@
 {% endblock h1 %}
 {% block content %}
     <div class="post">
-        <span class="post-author">By <strong>admin</strong></span>
-        <span class="post-date">{{ item.post_date|date:"M d, Y"}}</span>
+        <span class="post-author">By <strong>
+            {% if item.author.profile.display_name %}
+                {{ item.author.profile.display_name }}
+            {% else %}
+                {{ item.author }}
+            {% endif %}
+        </strong></span>
+        <span class="post-date">{{ item.post_date|date:"Y-m-d"}}</span>
+        {% if perms.blog.change_post %}
+            | <a class="post-edit" href="{% url 'edit_post' item.id %}">Edit</a>
+        {% endif %}
         <div class="post-description clearfix">
             {{ item.description }}
-            {% if item.image %}
-                <img class="post-image" src="{{ item.image.url }}">
-            {% endif %}
-            <div class="post-body">
-                {{ item.body }}
-            </div>
         </div>
+        {% if item.image %}
+            <img class="post-image" src="{{ item.image_large.url }}">
+        {% endif %}
+        <div class="post-body">
+            {{ item.body }}
+        </div>
+        {% if item.tags %}
+            <ul class="tags">
+                {% for tag in item.tags.all %}
+                    <li class="tags-tag">
+                        <a class="tags-tag-a" href="{% url 'tag' tag.slug %}">{{ tag }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
 {% endblock content %}

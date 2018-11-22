@@ -40,6 +40,18 @@ ul {
     color: #fff; }
   .header-brand-name {
     color: #ccc; }
+  .header-user {
+    display: none;
+    position: absolute;
+    top: 0.8em;
+    right: 1em;
+    color: #aaa;
+    font-size: 14px; }
+    @media (min-width: 1200px) {
+      .header-user {
+        display: inherit; } }
+    .header-user:hover {
+      color: #fff; }
   .header-slogan {
     font-size: 18px;
     text-align: center;
@@ -201,5 +213,103 @@ ul {
     line-height: 1.5em; }
   .items-item-title {
     font-size: 1.2em; }
+
+.pagination {
+  text-align: center;
+  margin: 2em 0; }
+  .pagination-number {
+    padding: 0.3em 0.8em;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #AFAFAF; }
+    .pagination-number:hover {
+      background-color: #5EAEFD; }
+  .pagination-current {
+    background-color: #5EAEFD; }
+  .pagination-action {
+    margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+    font-size: 1.3em; }
+    .pagination-action:hover {
+      color: #3354AA; }
+  .pagination-previous, .pagination-next {
+    color: #3354AA; }
+
+.tags {
+  list-style: none;
+  padding-left: 0; }
+  .tags-tag {
+    display: inline-block;
+    padding: 0.6em 0.8em;
+    background-color: #3C98F5;
+    color: #fff;
+    margin-right: 0.5em;
+    border-radius: 2px; }
+    .tags-tag-a {
+      color: #fff; }
+    .tags-tag:hover {
+      background-color: #0c7ef2; }
+
+form label {
+  font-size: 18px;
+  display: block;
+  padding-bottom: 0.3em;
+  margin-top: 1em; }
+form .helptext {
+  display: inline-block;
+  margin-top: 0.2em;
+  font-style: italic; }
+form ul {
+  margin: 0; }
+form p {
+  margin: 0; }
+form input, form textarea, form select {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #E8E8E8; }
+form textarea#id_description {
+  height: 100px; }
+
+.submit {
+  display: inline-block;
+  width: auto;
+  background-color: #EF73C4;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none; }
+  .submit:hover {
+    background-color: #ea45b1; }
+
+.search {
+  position: relative;
+  padding: 0 0.2em; }
+  .search-count {
+    margin: 0 0 0.5em 0.3em; }
+  .search-icon {
+    position: absolute;
+    top: 1.2em;
+    left: 1.4em;
+    font-size: 18px;
+    color: #ACACAC; }
+  .search-input {
+    width: 100%;
+    padding: 1.1em 0 1em 3em;
+    margin-bottom: 0.8em;
+    border-radius: 3px;
+    border: 1px solid #E8E8E8;
+    color: #10678F;
+    font-size: 1.2em;
+    font-weight: 300;
+    height: 3em; }
+
+.profile-field {
+  margin: 0.5em 0; }
 
 /*# sourceMappingURL=style.css.map */

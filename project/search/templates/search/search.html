@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block hidebox %}
+    main--no-box
+{% endblock hidebox %}
+{% block content %}
+    {% include 'search/_search_form.html' %}
+    {% if items %}
+        <p class="search-count">
+            Found <strong>{{ items.paginator.count }}</strong> result{{ items.paginator.count|pluralize }}.
+        </p>
+        {% include 'base/_grid.html' %}
+    {% elif request.GET.q %}
+        <p class="search-no-results">
+            No results for "<strong>{{ request.GET.q}}</strong>"
+        </p>
+    {% endif %}
+    {% include 'base/_pagination.html' %}
+{% endblock content %}
