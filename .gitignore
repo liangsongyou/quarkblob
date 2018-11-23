@@ -111,3 +111,4 @@ node_modules
 media
 .sass-cache/
 .scss
+geckodriver.log

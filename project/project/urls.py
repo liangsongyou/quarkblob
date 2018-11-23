@@ -15,6 +15,7 @@ urlpatterns = [
     path('accounts/change/<int:pk>/',views.UserChange.as_view(), name='user_change'),
     path('accounts/profile/', views.profile, name='profile'),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('feedback/',include('feedback.urls')),
 
     path('', include('base.urls')),
 ] + static(settings.MEDIA_URL, 
