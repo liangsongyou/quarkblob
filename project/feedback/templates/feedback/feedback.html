@@ -7,5 +7,14 @@
     <h1>{{ title }}</h1>
 {% endblock h1 %}
 {% block content %}
-    
+    <form class="feedback-form" method="POST" action="">
+        {% csrf_token %}
+        {{ form }}
+        <input class="feedback-form-submit submit" type="submit" value="Save">
+    </form>
+    <div class="feedback-items">
+        {% for item in items %}
+            <h2 class="feedback-item" >{{ item.title }}</h2>
+        {% endfor %}
+    </div>
 {% endblock content %}

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
+from django.utils.translation import gettext as _
 
 from blog.models import Post, Tag
 from base.forms import CustomUserCreationForm, CustomUserChangeForm
@@ -18,6 +19,9 @@ def home(request):
     items = paginator.get_page(page)
     
     return render(request, 'base/home.html',{'items':items, 'title':'Home'})
+
+def about(request):
+    return render(request, 'base/about.html', {'title':_('About')})
 
 def tag(request, slug=None):
     _tag = get_object_or_404(Tag, slug=slug)

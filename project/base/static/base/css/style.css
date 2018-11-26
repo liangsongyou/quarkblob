@@ -309,7 +309,8 @@ form textarea#id_description {
     font-weight: 300;
     height: 3em; }
 
-.profile-field {
-  margin: 0.5em 0; }
+.language-switcher select, .language-switcher-submit {
+  width: auto;
+  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
