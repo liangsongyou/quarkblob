@@ -27,7 +27,7 @@
             <img class="post-image" src="{{ item.image_large.url }}">
         {% endif %}
         <div class="post-body">
-            {{ item.body }}
+            {{ item.body|linebreaks }}
         </div>
         {% if item.tags %}
             <ul class="tags">
