@@ -9,13 +9,14 @@
 {% endblock h1 %}
 {% block content %}
     <div class="post">
-        <span class="post-author">By <strong>
+        <span class="post-author"> <strong>
             {% if item.author.profile.display_name %}
                 {{ item.author.profile.display_name }}
             {% else %}
                 {{ item.author }}
             {% endif %}
         </strong></span>
+        <span><small>发表于</small></span>
         <span class="post-date">{{ item.post_date|date:"Y-m-d"}}</span>
         {% if perms.blog.change_post %}
             | <a class="post-edit" href="{% url 'edit_post' item.id %}">Edit</a>
